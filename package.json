@@ -1,0 +1,26 @@
+{
+  "name": "hexo-theme-imba97",
+  "version": "0.0.1",
+  "description": "Hexo 主题",
+  "repository": "imba97/hexo-theme-imba97",
+  "scripts": {
+    "build": "rimraf build dist && tsc && rollup -c rollup.config.js --bundleConfigAsCjs && rimraf build dist"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "imba97"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.0",
+    "@types/lodash": "^4.14.197",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.28.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
