@@ -3,7 +3,9 @@ menu:
   Home: /
   Archives: /archives
 rss: /atom.xml
-banner: "images/banner.jpg"
+
+color:
+  primary: '#686bb0'
 
 # Content
 excerpt_link: Read More
