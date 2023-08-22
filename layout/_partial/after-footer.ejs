@@ -1,5 +1,10 @@
 <%- js('js/jquery-3.6.4.min.js') %>
 <%- js('js/lodash-4.17.21.min.js') %>
+<%- js('https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js') %>
+
+<script>
+  $(document).pjax('a', '#main')
+</script>
 
 <% if (theme.fancybox){ %>
   <%- js('fancybox/jquery.fancybox.min.js') %>
