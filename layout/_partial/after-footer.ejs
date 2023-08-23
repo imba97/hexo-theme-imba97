@@ -27,6 +27,9 @@
     NProgress.done()
   })
 
+  // 修复 fancybox 关闭时触发 pjax 的问题
+  $.fancybox.defaults.hash = false
+
   document.addEventListener('DOMContentLoaded', function () {
     pjax = new Pjax({
       elements:
