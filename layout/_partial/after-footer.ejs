@@ -1,9 +1,13 @@
+<!-- 引入 js 库 -->
 <%- js('js/lib/jquery-3.6.4.min.js') %>
 <%- js('js/lib/lodash-4.17.21.min.js') %>
 <%- js('js/lib/pjax-0.2.8.min.js') %>
 
-<%- js('js/lib/nprogress-0.2.0.min.js') %> 
-<%- css('css/lib/nprogress-0.2.0.min.css') %> 
+<%- js('js/lib/nprogress-0.2.0.min.js') %>
+<%- css('css/lib/nprogress-0.2.0.min.css') %>
+
+<!-- 引入项目 js -->
+<%- js('js/index.js') %>
 
 <% if (theme.fancybox){ %>
   <%- js('fancybox/jquery.fancybox.min.js') %>
@@ -19,12 +23,17 @@
     NProgress.done()
   }
 
+  $(document).ready(() => {
+    Index.generateFancybox()
+  })
+
   $(document).on('pjax:send', function () {
     NProgress.start()
   })
 
   $(document).on('pjax:complete', function () {
     NProgress.done()
+    Index.generateFancybox()
   })
 
   // 修复 fancybox 关闭时触发 pjax 的问题
