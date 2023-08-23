@@ -2,7 +2,24 @@
 <%- js('js/lib/lodash-4.17.21.min.js') %>
 <%- js('js/lib/pjax-0.2.8.min.js') %>
 
+<%- js('js/lib/nprogress-0.2.0.min.js') %> 
+<%- css('css/lib/nprogress-0.2.0.min.css') %> 
+
+
 <script>
+  NProgress.start()
+  window.onload = function () {
+    NProgress.done()
+  }
+
+  $(document).on('pjax:send', function () {
+    NProgress.start()
+  })
+
+  $(document).on('pjax:complete', function () {
+    NProgress.done()
+  })
+
   document.addEventListener('DOMContentLoaded', function () {
     pjax = new Pjax({
       elements:
