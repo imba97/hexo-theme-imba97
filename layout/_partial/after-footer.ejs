@@ -5,6 +5,13 @@
 <%- js('js/lib/nprogress-0.2.0.min.js') %> 
 <%- css('css/lib/nprogress-0.2.0.min.css') %> 
 
+<% if (theme.fancybox){ %>
+  <%- js('fancybox/jquery.fancybox.min.js') %>
+<% } %>
+
+<% if(is_post()) { %>
+  <%- js('js/layout/post.js') %>
+<% } %>
 
 <script>
   NProgress.start()
@@ -35,11 +42,3 @@
     })
   })
 </script>
-
-<% if (theme.fancybox){ %>
-  <%- js('fancybox/jquery.fancybox.min.js') %>
-<% } %>
-
-<% if(is_post()) { %>
-  <%- js('js/layout/post.js') %>
-<% } %>
