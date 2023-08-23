@@ -1,9 +1,23 @@
 <%- js('js/jquery-3.6.4.min.js') %>
+
 <%- js('js/lodash-4.17.21.min.js') %>
-<%- js('https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js') %>
+<%- js('js/pjax-0.2.8.min.js') %>
 
 <script>
-  $(document).pjax('a', '#main')
+  document.addEventListener('DOMContentLoaded', function () {
+    pjax = new Pjax({
+      elements:
+        'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([notallow="return false;"]):not([notallow="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+      selectors: [
+        'head title', // 标题
+        'head meta[name=keywords]', // 关键词
+        'head meta[name=description]', // 描述
+        'script[data-pjax]', // script 标签添加 data-pjax
+        '#main'
+      ],
+      cacheBust: false
+    })
+  })
 </script>
 
 <% if (theme.fancybox){ %>
