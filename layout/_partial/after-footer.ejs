@@ -1,20 +1,21 @@
 <!-- 引入 js 库 -->
-<%- js('js/lib/jquery-3.6.4.min.js') %>
-<%- js('js/lib/lodash-4.17.21.min.js') %>
-<%- js('js/lib/pjax-0.2.8.min.js') %>
+<%- js('js/lib/jquery-3.6.4.min') %>
+<%- js('js/lib/lodash-4.17.21.min') %>
+<%- js('js/lib/pjax-0.2.8.min') %>
 
-<%- js('js/lib/nprogress-0.2.0.min.js') %>
-<%- css('css/lib/nprogress-0.2.0.min.css') %>
+<%- js('js/lib/nprogress-0.2.0.min') %>
+<%- css('css/lib/nprogress-0.2.0.min') %>
 
 <!-- 引入项目 js -->
-<%- js('js/index.js') %>
+<%- js('js/index') %>
+<%- js('js/layout/header') %>
 
 <% if (theme.fancybox){ %>
-  <%- js('fancybox/jquery.fancybox.min.js') %>
+  <%- js('fancybox/jquery.fancybox.min') %>
 <% } %>
 
 <% if(is_post()) { %>
-  <%- js('js/layout/post.js') %>
+  <%- js('js/layout/post') %>
 <% } %>
 
 <script>
