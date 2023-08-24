@@ -12,7 +12,7 @@ export default glob.sync(`${outputDir}/**/*.js`).map((file) => {
   const name = pathName.map(upperFirst).join('').replace(/\.js$/, '')
 
   return {
-    external: ['jquery', 'lodash'],
+    external: ['jquery', 'lodash', 'smooth-scrollbar'],
     input: file,
     output: {
       name,

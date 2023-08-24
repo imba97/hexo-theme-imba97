@@ -1,6 +1,12 @@
-var Index = (function (exports, $) {
+var Index = (function (exports, $, Scrollbar) {
     'use strict';
 
+    $(() => {
+        Scrollbar.init(document.querySelector('#container'), {
+            damping: 0.2,
+            alwaysShowTracks: true
+        });
+    });
     const generateFancybox = () => {
         $('.article-entry').each(function (i) {
             $(this)
@@ -29,4 +35,4 @@ var Index = (function (exports, $) {
 
     return exports;
 
-})({}, $);
+})({}, $, Scrollbar);

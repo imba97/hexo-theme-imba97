@@ -1,4 +1,12 @@
 import $ from 'jquery'
+import Scrollbar from 'smooth-scrollbar'
+
+$(() => {
+  Scrollbar.init(document.querySelector('#container')!, {
+    damping: 0.2,
+    alwaysShowTracks: true
+  })
+})
 
 export const generateFancybox = () => {
   $('.article-entry').each(function (i) {
