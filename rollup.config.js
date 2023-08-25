@@ -37,6 +37,15 @@ const configHandler = {
         }
       }
     }
+  },
+
+  [OutputKey.Scripts]() {
+    return {
+      external: ['lodash'],
+      output: {
+        format: 'cjs'
+      }
+    }
   }
 }
 
