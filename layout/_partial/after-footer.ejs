@@ -1,58 +1,10 @@
-<!-- 引入 js 库 -->
-<%- js('js/lib/jquery-3.6.4.min') %>
-<%- js('js/lib/lodash-4.17.21.min') %>
-<%- js('js/lib/pjax-0.2.8.min') %>
-<%- js('js/lib/smooth-scrollbar-8.8.3.min') %>
-
-<%- js('js/lib/nprogress-0.2.0.min') %>
-<%- css('css/lib/nprogress-0.2.0.min') %>
+<!-- 引入 libs js 库 -->
+<%- autoImport('js') %>
 
 <!-- 引入项目 js -->
 <%- js('js/layout/index') %>
 <%- js('js/layout/header') %>
 
-<% if (theme.fancybox){ %>
-  <%- js('fancybox/jquery.fancybox.min') %>
-<% } %>
-
 <% if(is_post()) { %>
   <%- js('js/layout/post') %>
 <% } %>
-
-<script>
-  NProgress.start()
-  window.onload = function () {
-    NProgress.done()
-  }
-
-  $(document).ready(() => {
-    Index.generateFancybox()
-  })
-
-  $(document).on('pjax:send', function () {
-    NProgress.start()
-  })
-
-  $(document).on('pjax:complete', function () {
-    NProgress.done()
-    Index.generateFancybox()
-  })
-
-  // 修复 fancybox 关闭时触发 pjax 的问题
-  $.fancybox.defaults.hash = false
-
-  document.addEventListener('DOMContentLoaded', function () {
-    pjax = new Pjax({
-      elements:
-        'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([notallow="return false;"]):not([notallow="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
-      selectors: [
-        'head title', // 标题
-        'head meta[name=keywords]', // 关键词
-        'head meta[name=description]', // 描述
-        'script[data-pjax]', // script 标签添加 data-pjax
-        '#main'
-      ],
-      cacheBust: false
-    })
-  })
-</script>
