@@ -17,7 +17,7 @@ hexo.extend.helper.register('autoImport', function (type) {
 
       const topInfo = _.keys(weight).map((name) => ({
         name,
-        path: `libs/${name}/`
+        path: `lib/${name}/`
       }))
 
       // 启用
@@ -25,7 +25,7 @@ hexo.extend.helper.register('autoImport', function (type) {
         enabledKey,
         (result, key) =>
           _.assign(result, {
-            [key]: _.get(hexo.theme.config, `libs.${key}`, false)
+            [key]: _.get(hexo.theme.config, `functions.${key}`, false)
           }),
         {}
       )
@@ -38,7 +38,7 @@ hexo.extend.helper.register('autoImport', function (type) {
         )
         // 过滤出启用的
         .filter((file) => {
-          const key = _.get(/libs\/(.*?)\//.exec(file), '1')
+          const key = _.get(/lib\/(.*?)\//.exec(file), '1')
           return !key || !_.has(enabled, key) || enabled[key]
         })
         // 根据权重排序
