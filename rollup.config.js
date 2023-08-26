@@ -41,7 +41,7 @@ const configHandler = {
 
   [OutputKey.Scripts]() {
     return {
-      external: ['lodash'],
+      external: ['lodash', 'fs-extra'],
       output: {
         format: 'cjs'
       }

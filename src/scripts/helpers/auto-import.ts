@@ -4,10 +4,13 @@ import { readdirSync, statSync } from 'fs-extra'
 
 const tree: string[] = []
 
+// lib 目录
+const lib = 'lib'
+
 hexo.extend.helper.register('autoImport', function (type) {
   switch (type) {
     case 'js':
-      // libs 的权重，权重越大引入越靠前
+      // 权重，权重越大引入越靠前
       const weight: Record<string, number> = {
         jquery: 10
       }
@@ -17,7 +20,7 @@ hexo.extend.helper.register('autoImport', function (type) {
 
       const topInfo = _.keys(weight).map((name) => ({
         name,
-        path: `lib/${name}/`
+        path: `${lib}/${name}/`
       }))
 
       // 启用
@@ -38,7 +41,7 @@ hexo.extend.helper.register('autoImport', function (type) {
         )
         // 过滤出启用的
         .filter((file) => {
-          const key = _.get(/lib\/(.*?)\//.exec(file), '1')
+          const key = _.get(new RegExp(`/${lib}/(.*?)/`).exec(file), '1')
           return !key || !_.has(enabled, key) || enabled[key]
         })
         // 根据权重排序
@@ -56,7 +59,7 @@ hexo.extend.helper.register('autoImport', function (type) {
   return ''
 })
 
-// 获取 source/libs 目录树
+// 获取 source/lib 目录树
 ;(function getDirectoryTree(dirPath: string) {
   const dir = readdirSync(dirPath)
 
@@ -73,4 +76,4 @@ hexo.extend.helper.register('autoImport', function (type) {
   })
 
   return tree
-})(path.resolve(__dirname, '../../source/libs'))
+})(path.resolve(__dirname, `../../source/${lib}`))
