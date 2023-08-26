@@ -3,6 +3,7 @@ menu:
   主页: /
   文章: /archives
 rss: /atom.xml
+
 banner: 'https://imba97.cn/img/bg.png'
 
 color:
@@ -10,7 +11,10 @@ color:
 
 # Content
 excerpt_link: Read More
-fancybox: true
+
+# 功能开关
+functions:
+  fancybox: true
 
 # # Footer
 # copyright: |-
