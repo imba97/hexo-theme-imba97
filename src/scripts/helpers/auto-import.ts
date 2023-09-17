@@ -41,7 +41,7 @@ hexo.extend.helper.register('autoImport', function (type) {
         )
         // 过滤出启用的
         .filter((file) => {
-          const key = _.get(new RegExp(`/${lib}/(.*?)/`).exec(file), '1')
+          const key = _.get(new RegExp(`${lib}/(.*?)/`).exec(file), '1')
           return !key || !_.has(enabled, key) || enabled[key]
         })
         // 根据权重排序
