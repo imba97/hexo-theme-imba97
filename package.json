@@ -4,8 +4,8 @@
   "description": "Hexo 主题",
   "repository": "imba97/hexo-theme-imba97",
   "scripts": {
-    "dev": "concurrently \"tsc -w\" \"rollup -c rollup.config.js -w --bundleConfigAsCjs\" \"unocss -w\"",
-    "build": "rimraf build dist && tsc && rollup -c rollup.config.js --bundleConfigAsCjs && rimraf build dist"
+    "dev": "concurrently \"tsc -w\" \"cross-env NODE_ENV=development rollup -c rollup.config.js -w --bundleConfigAsCjs\" \"unocss -w\"",
+    "build": "rimraf build dist && tsc && cross-env NODE_ENV=production rollup -c rollup.config.js --bundleConfigAsCjs && rimraf build dist"
   },
   "keywords": [
     "hexo",
@@ -17,6 +17,7 @@
     "@iconify/json": "^2.2.125",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.2.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "@types/fs-extra": "^11.0.1",
     "@types/hexo": "^3.8.8",
     "@types/jquery": "^3.5.16",
@@ -24,6 +25,7 @@
     "@types/nprogress": "^0.2.0",
     "@unocss/cli": "^0.55.3",
     "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3",
     "fs-extra": "^11.1.1",
     "rimraf": "^5.0.1",
     "rollup": "^3.28.0",
