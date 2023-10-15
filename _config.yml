@@ -2,9 +2,12 @@
 menu:
   主页: /
   文章: /archives
+
 rss: /atom.xml
 
 banner: 'https://imba97.cn/img/bg.png'
+
+logo: https://imba97.cn/uploads/2019/08/imba97-1024-300x300.png
 
 color:
   primary: '#686bb0'
