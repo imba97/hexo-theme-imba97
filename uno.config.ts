@@ -5,7 +5,7 @@ export default defineConfig({
   cli: {
     entry: {
       patterns: ['layout/**/*.ejs'],
-      outFile: 'source/css/uno-style.css'
+      outFile: 'source/css/uno.css'
     }
   }
 })
