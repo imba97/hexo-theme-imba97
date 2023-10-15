@@ -4,3 +4,9 @@ pnpm-lock.yaml
 /build
 /dist
 /node_modules
+
+/scripts/*
+!/scripts/.gitkeep
+
+/source/js/*
+!/source/js/.gitkeep
