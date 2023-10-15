@@ -29,15 +29,11 @@
   <%- favicon_tag(theme.favicon) %>
   <% } %>
 
-  <% if (config.highlight.enable){ %>
-  <%- css('https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css') %>
-  <% } %>
-
   <%- css('css/style') %>
+  <%- css('css/uno-style') %>
 
-  <% if (theme.fancybox){ %>
-  <%- css('fancybox/jquery.fancybox.min.css') %>
-  <% } %>
+  <!-- 第三方库 CSS -->
+  <%- autoImport('css') %>
   
   <% if (theme.links) {%>
   <%- css('https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css') %>
