@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import $ from 'jquery'
 import Scrollbar from 'smooth-scrollbar'
 
