@@ -24,7 +24,7 @@ $(() => {
   })
 
   // 修复 fancybox 关闭时触发 pjax 的问题
-  ;($ as any).fancybox.defaults.hash = false
+  _.set($, 'fancybox.defaults.hash', false)
 
   new Pjax({
     elements:
