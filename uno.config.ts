@@ -4,7 +4,7 @@ export default defineConfig({
   presets: [presetUno(), presetAttributify(), presetIcons()],
   cli: {
     entry: {
-      patterns: ['layout/**/*.ejs'],
+      patterns: ['layout/**/*.ejs', '../../source/**/*'],
       outFile: 'source/css/uno.css'
     }
   }
