@@ -12,5 +12,10 @@ export default defineConfig({
       patterns: ['layout/**/*.ejs', '../../source/**/*'],
       outFile: 'source/css/uno.css'
     }
+  },
+  theme: {
+    colors: {
+      primary: '#7276c6'
+    }
   }
 })
