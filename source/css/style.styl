@@ -46,9 +46,6 @@ a {
   position: relative
   overflow: hidden
 
-.mobile-nav-on
-  overflow: hidden
-
 #wrap
   height: 100%
   width: 100%
@@ -57,8 +54,6 @@ a {
   left: 0
   z-index: 1
   background: color-background
-  .mobile-nav-on &
-    left: mobile-nav-width
 
 if sidebar and sidebar isnt bottom
   #main
@@ -76,7 +71,6 @@ if sidebar is left
 @import "_partial/archive"
 @import "_partial/footer"
 @import "_partial/highlight"
-@import "_partial/mobile"
 
 if sidebar
   @import "_partial/sidebar"
