@@ -54,7 +54,7 @@ const configHandler = {
 
 export default keys(outputDir).reduce((configs) => {
   const config = glob.sync(`build/**/*.js`).map((file) => {
-    const [, outputKey, ...pathName] = file.split('/')
+    const [, outputKey, ...pathName] = file.split(/\\|\//)
     const name = pathName.map(upperFirst).join('').replace(/\.js$/, '')
 
     const outputFile = path.resolve(
