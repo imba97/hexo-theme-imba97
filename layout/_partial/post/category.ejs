@@ -1,10 +1,9 @@
 <% if (post.categories && post.categories.length){ %>
-  <div class="article-category">
-    <%- list_categories(post.categories, {
-      show_count: false,
-      class: 'article-category',
-      style: 'none',
-      separator: '►'
-    }) %>
-  </div>
+<div flex items-center font-bold gap-2>
+  <% post.categories.forEach(item => { %>
+  <a href="/categories/<%= item.name %>/" text-gray>
+    <%= item.name %>
+  </a>
+  <% }) %>
+</div>
 <% } %>
