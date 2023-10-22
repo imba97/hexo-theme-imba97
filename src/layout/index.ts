@@ -4,7 +4,7 @@ import Scrollbar from 'smooth-scrollbar'
 
 $(() => {
   Scrollbar.init(document.querySelector('#container')!, {
-    damping: 0.2,
+    damping: 0.1,
     alwaysShowTracks: true
   })
 
