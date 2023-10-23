@@ -1,6 +1,6 @@
 import type { NProgress } from 'nprogress'
 
-import Index from '../layout/index'
+import Index from '../page/index'
 
 declare global {
   const NProgress: NProgress

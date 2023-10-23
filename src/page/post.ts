@@ -20,6 +20,7 @@ var stopSearchAnim = function (callback?: Function) {
 }
 
 $('.nav-search-btn').on('click', function () {
+  console.log('nav-search-btn clicked')
   if (isSearchAnim) return
 
   startSearchAnim()

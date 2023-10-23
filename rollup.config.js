@@ -11,9 +11,9 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const OutputKey = Object.freeze({
   /**
-   * 页面 layout
+   * 页面 js
    */
-  Layout: 'layout',
+  Page: 'page',
 
   /**
    * hexo 打包使用的脚本
@@ -23,12 +23,12 @@ const OutputKey = Object.freeze({
 
 // src 打包对应的实际输出文件夹
 const outputDir = {
-  [OutputKey.Layout]: 'source/js/layout',
+  [OutputKey.Page]: 'source/js/page',
   [OutputKey.Scripts]: 'scripts'
 }
 
 const configHandler = {
-  [OutputKey.Layout]({ name }) {
+  [OutputKey.Page]({ name }) {
     return {
       external: ['jquery', 'lodash', 'smooth-scrollbar'],
       output: {
@@ -54,6 +54,7 @@ const configHandler = {
 
 export default keys(outputDir).reduce((configs) => {
   const config = glob.sync(`build/**/*.js`).map((file) => {
+    console.log(file)
     const [, outputKey, ...pathName] = file.split(/\\|\//)
     const name = pathName.map(upperFirst).join('').replace(/\.js$/, '')
 
