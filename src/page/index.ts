@@ -2,7 +2,12 @@ import _ from 'lodash'
 import $ from 'jquery'
 import Scrollbar from 'smooth-scrollbar'
 
+import { useWorker } from '@/worker/useWorker'
+
 $(() => {
+  const searchWorker = useWorker('search')
+  searchWorker.post({})
+
   Scrollbar.init(document.querySelector('#container')!, {
     damping: 0.1,
     alwaysShowTracks: true
