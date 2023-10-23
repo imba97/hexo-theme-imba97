@@ -7,9 +7,7 @@ class WorkerFactory {
 
   post(params: Record<string, any>) {
     return new Promise((resolve, reject) => {
-      this.worker.addEventListener('message', (event) => {
-        resolve(event.data)
-      })
+      this.worker.addEventListener('message', (e) => resolve(e.data))
 
       this.worker.addEventListener('error', reject)
       this.worker.addEventListener('messageerror', reject)
